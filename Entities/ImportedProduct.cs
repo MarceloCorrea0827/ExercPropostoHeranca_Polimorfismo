@@ -8,14 +8,14 @@ namespace ExercPropHerPolim.Entities
 
         public ImportedProduct() { }
 
-        public ImportedProduct(double customFee)
+        public ImportedProduct(string name, double price, double customFee) : base(name, price)
         {
             CustomFee = customFee;
         }
 
         public override string PriceTag()
         {
-            return base.PriceTag() + "Customs fee: $" + CustomFee.ToString("F2", CultureInfo.InvariantCulture);
+            return base.PriceTag() + " (Customs fee: $" + CustomFee.ToString("F2", CultureInfo.InvariantCulture) + ")";
         }
     }
 }

@@ -10,14 +10,14 @@ namespace ExercPropHerPolim.Entities
         public UsedProduct()
         {
         }
-        public UsedProduct(DateTime manufactureDate)
+        public UsedProduct(string name, double price, DateTime manufactureDate) : base(name, price)
         {
             ManufactureDate = manufactureDate;
         }
 
         public override string PriceTag()
         {
-            return (Name + "(used) $" + Price.ToString("F2", CultureInfo.InvariantCulture) + "(ManufactureDate date: " + ManufactureDate.ToString("dd/MM/yyyy"));
+            return (Name + "(used) $" + Price.ToString("F2", CultureInfo.InvariantCulture) + " (ManufactureDate date: " + ManufactureDate.ToString("dd/MM/yyyy") + ")");
         }
     }
 }
